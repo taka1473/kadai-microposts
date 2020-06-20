@@ -3,7 +3,11 @@ class ApplicationController < ActionController::Base
     include SessionsHelper
     
     
-    private
+private
+    
+  def counts(user)
+      @count_microposts = user.microposts.count
+  end
 
   def require_user_logged_in
     unless logged_in?
